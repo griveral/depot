@@ -13,7 +13,10 @@ Depot::Application.configure do
   config.eager_load = false
 
   # Configure static asset server for tests with Cache-Control for performance.
-  config.serve_static_assets  = true
+  config.serve_static_assets  = true # nabnab commenting as this will be deprecated in future rails.
+
+  #config.serve_static_files  = true # nabnab this is for rails5 and above fix for deprecation..
+
   config.static_cache_control = "public, max-age=3600"
 
   # Show full error reports and disable caching.
@@ -33,4 +36,10 @@ Depot::Application.configure do
 
   # Print deprecation notices to the stderr.
   config.active_support.deprecation = :stderr
+
+  #nabnab added for deprecation warning..
+  #In Rails 5, the default value of this option will change from `:sorted` to `:random`
+  #Rails.application.configure do
+  #  config.active_support.test_order = :sorted
+  #end
 end
